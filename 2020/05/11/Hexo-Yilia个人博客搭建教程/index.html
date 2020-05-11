@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/assets/img/Hexo+Yilia%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Git%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E5%9B%BE%E7%89%87.png">
 <meta property="article:published_time" content="2020-05-11T01:27:12.000Z">
-<meta property="article:modified_time" content="2020-05-11T01:43:01.674Z">
+<meta property="article:modified_time" content="2020-05-11T01:47:27.938Z">
 <meta property="article:author" content="奕尘">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="教程">
@@ -229,7 +229,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">'git'</span></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line">       <span class="attr">github:</span> <span class="string">'你的Github仓库SSH'</span> 	<span class="comment">##如果只需要部署到Github或Gitee上把另外一个删除即可</span></span><br><span class="line">       <span class="attr">gitee:</span> <span class="string">'你的Gitee仓库SSH'</span> </span><br><span class="line">  <span class="attr">branch:</span> <span class="string">'master'</span></span><br></pre></td></tr></table></figure>
 
 <p>3.5 将Hexo博客部署至Github&amp;Gitee</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo cl</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo p 	<span class="comment">#第一次部署需要验证Github账号，推送成功之后访问你创建的仓库名就可以看到博客了</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo cl</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d 	<span class="comment">#第一次部署需要验证Github账号，推送成功之后访问你创建的仓库名就可以看到博客了</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="四-安装Yilia主题"><a href="#四-安装Yilia主题" class="headerlink" title="四.安装Yilia主题"></a>四.安装Yilia主题</h2><p>4.1 Clone <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">Yilia主题</a>到blog文件中去，Clone至blog/themes/yilia文件夹中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
