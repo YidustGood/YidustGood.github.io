@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | YidustBlog</title>
+  <title>Junit+反射+注解-实例 | YidustBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="YidustBlog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YidustBlog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="一.Junit单元测试1.创建一个Calculator类，其中有加减乘除的方法，使用Junit单元测试对方法进行测试 12345678910111213141516171819public class Calculator &amp;#123;    &#x2F;&#x2F;加法    public int add(int a,int b)&amp;#123;        return a + b;    &amp;#125;    &#x2F;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Junit+反射+注解-实例">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="YidustBlog">
-<meta property="og:description" content="YidustBlog">
+<meta property="og:description" content="一.Junit单元测试1.创建一个Calculator类，其中有加减乘除的方法，使用Junit单元测试对方法进行测试 12345678910111213141516171819public class Calculator &amp;#123;    &#x2F;&#x2F;加法    public int add(int a,int b)&amp;#123;        return a + b;    &amp;#125;    &#x2F;&#x2F;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/testAddResult.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/reflectTestResult.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/reflectTestResultP.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/zjTestResult.png">
+<meta property="og:image" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/bugTxt.png">
+<meta property="article:published_time" content="2020-05-12T00:42:55.000Z">
+<meta property="article:modified_time" content="2020-05-12T01:52:52.692Z">
 <meta property="article:author" content="奕尘">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/testAddResult.png">
   
     <link rel="alternative" href="/atom.xml" title="YidustBlog" type="application/atom+xml">
   
@@ -163,37 +172,116 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Junit-反射-注解-实例" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Junit+反射+注解-实例
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
   	<time datetime="2020-05-12T00:42:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/">Junit+反射+注解-实例</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-Junit单元测试"><a href="#一-Junit单元测试" class="headerlink" title="一.Junit单元测试"></a>一.Junit单元测试</h2><p>1.创建一个Calculator类，其中有加减乘除的方法，使用Junit单元测试对方法进行测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line">    <span class="comment">//加法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//减法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sub</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a - b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//除法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a / b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//乘法</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mul</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a * b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<a id="more"></a>
+
+<p>2.创建Junit单元测试类，对Calculator类的方法进行测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化方法：一般用于申请资源</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"init..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 关闭方法：一般用于关闭资源占用</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"close..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 测试add方法,方法前必须要添加<span class="doctag">@Test</span>注解</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testAdd</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"add..."</span>);</span><br><span class="line">        Calculator calculator = <span class="keyword">new</span> Calculator();</span><br><span class="line">        <span class="keyword">int</span> result = calculator.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">        <span class="comment">//断言，判断结果</span></span><br><span class="line">        Assert.assertEquals(<span class="number">3</span>,result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSub</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"sub..."</span>);</span><br><span class="line">        Calculator calculator = <span class="keyword">new</span> Calculator();</span><br><span class="line">        <span class="keyword">int</span> result = calculator.sub(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">        <span class="comment">//断言，判断结果</span></span><br><span class="line">        Assert.assertEquals(-<span class="number">1</span>,result);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.运行测试testAdd()方法，Junit单元测试每个测试方法都可以单独运行测试<br>运行结果为绿色则测试通过，运行结果为红色则测试不通过。</p>
+<p><img src="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/testAddResult.png" alt="alt=“单元测试结果”"></p>
+<h2 id="二-反射实例"><a href="#二-反射实例" class="headerlink" title="二. 反射实例"></a>二. 反射实例</h2><ul>
+<li>实例需求：<ul>
+<li>通过读取配置文件让ReflectTest类可以在不修改源码的情况下可以执行任意类的任意方法</li>
+</ul>
+</li>
+</ul>
+<p>1.创建pro.properties配置文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#存储需要执行的类的全类名</span></span><br><span class="line"><span class="attr">className</span>=<span class="string">com.yidust.domain.Student</span></span><br><span class="line"><span class="comment">#存储需要执行的方法名</span></span><br><span class="line"><span class="attr">methodName</span>=<span class="string">sleep</span></span><br></pre></td></tr></table></figure>
+
+<p>2.创建ReflectTest类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//加载配置文件</span></span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="comment">//通过类加载器找到配置文件</span></span><br><span class="line">        ClassLoader classLoaderRE = ReflectTest<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>()</span>;</span><br><span class="line">        <span class="comment">//通过类加载器找到配置文件返回输入流对象</span></span><br><span class="line">        InputStream is = classLoaderRE.getResourceAsStream(<span class="string">"pro.properties"</span>);</span><br><span class="line">        <span class="comment">//通过输入流对象加载配置文件</span></span><br><span class="line">        pro.load(is);</span><br><span class="line">        <span class="comment">//获取到配置文件内容,</span></span><br><span class="line">        String className = pro.getProperty(<span class="string">"className"</span>);</span><br><span class="line">        String methodName = pro.getProperty(<span class="string">"methodName"</span>);</span><br><span class="line">        <span class="comment">//通过全类名加载该类的Class对象到内存中</span></span><br><span class="line">        Class cls = Class.forName(className);</span><br><span class="line">        <span class="comment">//通过Class对象创建类的实例对象(这里的newInstance是必须是无参构造函数)</span></span><br><span class="line">        Object obj = cls.newInstance();</span><br><span class="line">        <span class="comment">//获取到方法对象</span></span><br><span class="line">        Method method = cls.getMethod(methodName);</span><br><span class="line">        <span class="comment">//执行方法</span></span><br><span class="line">        method.invoke(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.创建两个用于测试的类Person类和Student类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"eating..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"sleeping..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.执行程序结果：</p>
+<p><img src="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/reflectTestResult.png" alt="alt=&quot;执行结果&quot;"></p>
+<p>5.将pro.properties配置文件内容修改，指向Person类，方法名更改为eat方法</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#存储需要执行的类的全类名</span></span><br><span class="line"><span class="attr">className</span>=<span class="string">com.yidust.domain.Person</span></span><br><span class="line"><span class="comment">#存储需要执行的方法名</span></span><br><span class="line"><span class="attr">methodName</span>=<span class="string">eat</span></span><br></pre></td></tr></table></figure>
+
+<p>6.执行程序结果：</p>
+<p><img src="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/reflectTestResultP.png" alt="alt=&quot;结果&quot;"></p>
+<h2 id="三-注解实例"><a href="#三-注解实例" class="headerlink" title="三.注解实例"></a>三.注解实例</h2><ul>
+<li><p>实例需求：</p>
+</li>
+<li><p>MyCalculator类有加减乘除4个方法，需要对该类被@Check注解修饰的方法进行测试，如有异常需要将异常信息打印到bug.txt文档中</p>
+</li>
+<li><p>MyCalculator类，(其中将div方法写为1/0，使其产生异常，供测试使用)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCalculator</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Check</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1 + 1 = "</span> + (<span class="number">1</span> - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Check</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sub</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1 - 1 = "</span> + (<span class="number">1</span> - <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Check</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">div</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1 / 0 = "</span> + (<span class="number">1</span> / <span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Check</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mul</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1 * 0 = "</span> + (<span class="number">1</span> * <span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//该方法为被@Check注解标注</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p>1.创建Check注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)  <span class="comment">//该注解只能被用于方法上</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)	<span class="comment">//该注解保留到RUNTIME运行时</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Check &#123;</span><br></pre></td></tr></table></figure>
+
+<p>2.创建CheckMyCalculator类，用来检测MyCalculator类中被@Check标注的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="comment">//实例化一个MyCalculator对象</span></span><br><span class="line">	MyCalculator myCalculator = <span class="keyword">new</span> MyCalculator();</span><br><span class="line">    <span class="comment">//通过实例对象获取Class对象</span></span><br><span class="line">	Class aClass = myCalculator.getClass();</span><br><span class="line">    <span class="comment">//获取全部方法</span></span><br><span class="line">	Method[] methods = aClass.getMethods();</span><br><span class="line">    <span class="comment">//新建输出流</span></span><br><span class="line">	BufferedWriter bufferedWriter = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"but.txt"</span>));</span><br><span class="line">    <span class="comment">//记录异常次数变量</span></span><br><span class="line">    <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//遍历执行获取到的方法</span></span><br><span class="line">	<span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">        <span class="comment">//判断方法是否被@Check标注，被标注则执行该方法并捕捉异常，否则不执行</span></span><br><span class="line">		<span class="keyword">if</span> (method.isAnnotationPresent(Check<span class="class">.<span class="keyword">class</span>)) </span>&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    method.invoke(myCalculator);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    number++;</span><br><span class="line">                    bufferedWriter.write(method.getName() + <span class="string">"方法异常！"</span>);</span><br><span class="line">                    bufferedWriter.newLine();</span><br><span class="line">                    bufferedWriter.write(<span class="string">"异常类型："</span> + e.getCause().getClass().getSimpleName());</span><br><span class="line">                    bufferedWriter.newLine();</span><br><span class="line">                    bufferedWriter.write(<span class="string">"异常原因："</span> + e.getCause().getMessage());</span><br><span class="line">                    bufferedWriter.newLine();</span><br><span class="line">                    bufferedWriter.write(<span class="string">"-------------------------------"</span>);</span><br><span class="line">                    bufferedWriter.newLine();</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	bufferedWriter.write(<span class="string">"检测完成，本次一共出现"</span> + number + <span class="string">"次异常！"</span>);</span><br><span class="line">    <span class="comment">//关闭bufferedWriter，close()方法会自动调用flush()方法将缓冲区的内容写到目标文件</span></span><br><span class="line">	bufferedWriter.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.执行CheckMyCalculator，并查看bug.txt文件捕获到的异常内容</p>
+<p><img src="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/zjTestResult.png" alt><br><img src="/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/bugTxt.png" alt></p>
+<ul>
+<li>笔记文章： <a href="/2020/05/11/Junit+%E5%8F%8D%E5%B0%84+%E6%B3%A8%E8%A7%A3-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Junit+反射+注解-学习笔记">Junit+反射+注解-学习笔记</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -205,183 +293,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/12/Junit-%E5%8F%8D%E5%B0%84-%E6%B3%A8%E8%A7%A3-%E5%AE%9E%E4%BE%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/11/Junit+%E5%8F%8D%E5%B0%84+%E6%B3%A8%E8%A7%A3-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-05-11T08:21:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/11/Junit+%E5%8F%8D%E5%B0%84+%E6%B3%A8%E8%A7%A3-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Junit+反射+注解-学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/11/Junit+%E5%8F%8D%E5%B0%84+%E6%B3%A8%E8%A7%A3-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Junit+反射+注解-学习笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/11/Hexo-Yilia%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-05-11T01:27:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/11/Hexo-Yilia%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">Hexo+Yilia个人博客搭建教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/09/Hexo+Yilia%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-05-09T02:14:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/Hexo+Yilia%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/">Hexo+Yilia博客美化教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/09/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-09T02:08:51.406Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -416,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
