@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SpringBoot学习笔记 | YidustBlog</title>
+  <title>UE4网络联机BUG记录 | YidustBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一.SpringBoot点击下载">
+  <meta name="description" content="一.《客户端射击服务端人物判定时区会发生偏移问题》Question:多人联机FPS(Listen Server方式)(两套模型，一套自己看的手臂Arms Mesh一套给别人看的全身模型Character Mesh) 射击为射线检测的方式，客户端去射击服务端的玩家，客户端射击服务端，射线检测是在服务端进行的，服务端去检测射线碰撞，然后服务端的这个第三人称模型似乎是由于设置了拥有者不可见然后导致了没有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot学习笔记">
-<meta property="og:url" content="http://yoursite.com/2020/05/12/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="UE4网络联机BUG记录">
+<meta property="og:url" content="http://yoursite.com/2020/05/12/UE4%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BADebug/index.html">
 <meta property="og:site_name" content="YidustBlog">
-<meta property="og:description" content="一.SpringBoot点击下载">
+<meta property="og:description" content="一.《客户端射击服务端人物判定时区会发生偏移问题》Question:多人联机FPS(Listen Server方式)(两套模型，一套自己看的手臂Arms Mesh一套给别人看的全身模型Character Mesh) 射击为射线检测的方式，客户端去射击服务端的玩家，客户端射击服务端，射线检测是在服务端进行的，服务端去检测射线碰撞，然后服务端的这个第三人称模型似乎是由于设置了拥有者不可见然后导致了没有">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-12T07:55:43.000Z">
-<meta property="article:modified_time" content="2020-05-13T02:27:27.284Z">
+<meta property="article:modified_time" content="2020-07-26T03:51:08.521Z">
 <meta property="article:author" content="奕尘">
-<meta property="article:tag" content="JAVA">
-<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="UE4">
+<meta property="article:tag" content="Multiplayer">
+<meta property="article:tag" content="UE4 Debug">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YidustBlog" type="application/atom+xml">
@@ -169,14 +170,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-UE4多人联机Debug" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot学习笔记
+      UE4网络联机BUG记录
     </h1>
   
 
@@ -187,7 +188,7 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/05/12/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+<a href="/2020/05/12/UE4%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BADebug/" class="archive-article-date">
   	<time datetime="2020-05-12T07:55:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
         
@@ -195,7 +196,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一-SpringBoot"><a href="#一-SpringBoot" class="headerlink" title="一.SpringBoot"></a>一.SpringBoot</h1><p><a href="download/SpringBootTest.zip" title="C源码下载">点击下载</a></p>
+        <h1 id="一-《客户端射击服务端人物判定时区会发生偏移问题》"><a href="#一-《客户端射击服务端人物判定时区会发生偏移问题》" class="headerlink" title="一.《客户端射击服务端人物判定时区会发生偏移问题》"></a>一.《客户端射击服务端人物判定时区会发生偏移问题》</h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question:"></a>Question:</h2><p>多人联机FPS(Listen Server方式)(两套模型，一套自己看的手臂Arms Mesh一套给别人看的全身模型Character Mesh)</p>
+<p>射击为射线检测的方式，客户端去射击服务端的玩家，客户端射击服务端，射线检测是在服务端进行的，服务端去检测射线碰撞，然后服务端的这个第三人称模型似乎是由于设置了拥有者不可见然后导致了没有渲染动画，模型的Pose就是基础的那个Pose，然后就出现了客户端玩家看见的模型是持枪动作，实际判定的时候服务端是T字Pose也就是基础的那个Pose，然后客户端和服务端的模型Pose是不一样的，所以客户端的玩家按照自己看见的服务端玩家的模型去攻击实际上是会出现空枪的状况，因为在服务器上的模型并不是持枪的动作。</p>
+<h3 id="Summarise"><a href="#Summarise" class="headerlink" title="Summarise:"></a>Summarise:</h3><p>在CharacterMesh开启了Owner no see(拥有者不可见)之后，在本端不会执行动画蓝图中的动画状态，在其他客户端中是可见的，所以会正常执行动画。</p>
+<p>所以在需要对Server端的CharacterMesh进行射线检测的时候，依照Client端所看见的模型进行射线检测，并且该射线检测生成在Server端进行执行，</p>
+<p>由于Server端的CharacterMesh并未执行动画，所以Server端实际去检测的时候是按照自己的CharacterMesh进行射线检测，所以导致了在生成在Client端</p>
+<p>的射线检测和生成在Server端的射线检测的检测结果会出现不同。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><p>临时解决方案：</p>
+<p>将原来的LineTraceChannel射线检测，Run on Server 更改为 客户端本端生成，然后再调用一个Run on Server 的Apply Damage造成伤害，这样射线检测</p>
+<p>是在本端执行的，所以按本端所看到的为准，就不会出现检测不到的情况。</p>
 
       
 
@@ -240,11 +249,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">UE4</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Multiplayer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">UE4 Debug</a>
         		</li>
       		
 		</ul>
@@ -300,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/12/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/12/UE4%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BADebug/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -466,7 +479,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color4">UE4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Multiplayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">UE4 Debug</a>
               </li>
             
             <div class="clearfix"></div>
